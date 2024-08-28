@@ -50,8 +50,6 @@ const useAddRecipe = (recipes, setRecipes) => {
 
 export default useAddRecipe;
 
-HAUPTUNTERSCHIED ZU VARIANTE MIT AXIOS IST DIE VERWENDUNG VON FETCH ANSTELLE VON AXIOS
-
 
 
 */
