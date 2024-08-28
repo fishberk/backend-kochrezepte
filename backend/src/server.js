@@ -1,27 +1,18 @@
-import router from "./routes/recipeRoutes.js";
 import express from "express";
 import mongoose from "mongoose";
-import bodyParser from "body-parser";
 import "dotenv/config";
+import router from "./routes/recipeRoutes.js";
 
-// Initialize express server
 const server = express();
+const PORT = process.env.PORT;
 
-// Middleware
 server.use(express.json());
-server.use(bodyParser.urlencoded({ extended: true }));
+server.use(express.urlencoded({ extended: true }));
 
-// Use routes
 server.use("/recipes", router);
 
-// Connect to MongoDB
-mongoose
-  .connect(process.env.MONGO)
-  .then(() => console.log("MongoDB connected..."))
-  .catch((err) => console.log(err));
+mongoose.connect(process.env.MONGO);
 
-// Set up server to listen on a specific port
-const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // DOESNT WORK AT THE MOMENT !!!1!
