@@ -8,7 +8,7 @@ const RecipeForm = ({ onSubmit }) => {
 
   const validate = () => {
     const newErrors = {};
-    if (!title) newErrors.title = 'Titel ist erforderlich.';
+    if (!title) newErrors.title = 'Name ist erforderlich.';
     if (ingredients.some(ingredient => !ingredient)) newErrors.ingredients = 'Alle Zutatenfelder müssen ausgefüllt sein.';
     if (!instructions) newErrors.instructions = 'Anleitung ist erforderlich.';
     return newErrors;
